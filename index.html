@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <div class="wrapper">
+        <form action="">
+          <input type="number" placeholder="№"/>
+          <input type="text" placeholder="ФИО"/>
+          <input type="text" placeholder="Возраст"/>
+          <select name="prof" id="">
+            <option value="Программист">Программист</option>
+            <option value="Бухгалтер">Бухгалтер</option>
+            <option value="Юрист">Юрист</option>
+          </select>
+          <input type="submit" value="Добавить"/>
+        </form>
+        <table id="table">
+          <tr>
+            <th>№</th>
+            <th>ФИО</th>
+            <th>Возраст</th>
+            <th>Профессия</th>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td>Иванов Иван Иванович</td>
+            <td>24</td>
+            <td>Бухгалтер</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Петров Петр Петрович</td>
+            <td>40</td>
+            <td>Программист</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>Дмитриев Дмитрий Дмитриевич</td>
+            <td>33</td>
+            <td>Юрист</td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>Васечкин Васили Васильевич</td>
+            <td>29</td>
+            <td>Бухгалтер</td>
+          </tr>
+        </table>
+        <br>
+        <input type="button" name="delete" value="Удалить все" onclick="Del()">
+        <br>
+        <input type="button" name="arr" value="Array " onclick="ArrayParse()">
+     </div>
+      <script src="main.js"></script>
+</body>
+</html>
