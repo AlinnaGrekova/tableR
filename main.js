@@ -19,31 +19,28 @@ function formTable(selector){
   }
   formTable(".wrapper");
 
+  function Red(){
+  var tds=document.querySelectorAll('td');
+  for (var i=0; i<tds.length; i++){
+    tds[i].addEventListener('click', function func(){
+      var input=document.createElement('input');
+      input.value=this.innerHTML;
+      this.innerHTML='';
+      this.appendChild(input);
 
-  function Del() {
-    var delTable=document.getElementById('table');
-    for(var i=table.rows.length-1; i>0; i--){
-        table.deleteRow(i);
-    }
+      var td=this;
+      input.addEventListener('blur', function(){
+        td.innerHTML=this.value;
+        td.addEventListener('click', func);
+      });
+      this.removeEventListener('click', func);
+    });
   }
+}
 
-  //Функция,превращающая таблицу в массив
-  function ArrayParse(){
-    var TableList = new Array();
-  var table = document.getElementsByTagName("table");
-  for(var i=0;i<table.length;i++){
-      var tr = table.item(i).getElementsByTagName("tr");
-      TableList['table'+i] = new Array()
-      for(var j=0;j<tr.length;j++) {
-          var td = tr.item(j).getElementsByTagName("td");
-          TableList['table'+i]['tr_'+j] = new Array()
-          for(var f=0;f<td.length;f++) {
-              TableList['table'+i]['tr_'+j][f] = td.item(f).innerText;
-          }
-
-      }
-    }
-  console.log(TableList);
-  alert(TableList);
+function Del() {
+  var delTable=document.getElementById('table');
+  for(var i=table.rows.length-1; i>0; i--){
+      table.deleteRow(i);
   }
-  
+}
